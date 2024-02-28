@@ -39,7 +39,6 @@ jobs:
           sleep 5s
           echo "Running Security Checks.. 3"
           sleep 5s
-
   Deploy:
     name: Deployment 
     runs-on: ubuntu-latest
@@ -54,4 +53,13 @@ jobs:
           echo "Deployment in Progress ..."
           npm install
 
-    
+      # Add other deployment steps as needed
+      - name: Build with Next.js
+        working-directory: ./tutcicd
+        run: npm run build
+
+      - name: Deploy to Server
+        working-directory: ./tutcicd
+        run: |
+          echo "Deploying to the server..."
+          # Add your deployment steps here
