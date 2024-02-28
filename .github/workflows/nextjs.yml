@@ -44,22 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [lintTest, SecurityCheck]
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
       - name: Install Dependencies
-        working-directory: ./tutcicd
         run: |
           echo "Deployment in Progress ..."
-          npm install
-
-      # Add other deployment steps as needed
-      - name: Build with Next.js
-        working-directory: ./tutcicd
-        run: npm run build
-
-      - name: Deploy to Server
-        working-directory: ./tutcicd
-        run: |
-          echo "Deploying to the server..."
-          # Add your deployment steps here
+          sleep 5s;
